@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>QA tool</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Output</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-<h1>Welcome to my page!</h1>
-<p>This is my first site hosted on GitHub Pages.</p>
+<h1>Form with Output</h1>
+
+<!-- Form with a text input field and a button -->
+<form id="myForm">
+    <label for="userInput">Enter text:</label>
+    <input type="text" id="userInput" placeholder="Type something...">
+    <button type="button" id="submitButton">Submit</button>
+</form>
+
+<!-- Table to display the output -->
+<table>
+    <thead>
+    <tr>
+        <th>Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td id="outputCell">Your text will appear here</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+  // JavaScript to handle input and display the output
+  document.getElementById('submitButton').addEventListener('click', function() {
+    // Get the value from the input field
+    const userInput = document.getElementById('userInput').value;
+
+    // Check if the input field is empty
+    if (userInput.trim() === "") {
+      alert("Please enter some text!");
+      return;
+    }
+
+    // Display the text in the table cell
+    document.getElementById('outputCell').textContent = userInput;
+
+    // Clear the input field
+    document.getElementById('userInput').value = "";
+  });
+</script>
 </body>
 </html>
