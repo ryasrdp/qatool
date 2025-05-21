@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form with Output</title>
+    <title>Petition for space travel</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,8 +25,11 @@
 
 <!-- Form with a text input field and a button -->
 <form id="myForm">
-    <label for="userInput">Enter text:</label>
-    <input type="text" id="userInput" placeholder="Type something...">
+    <label for="userFirstName">First Name</label>
+    <input type="text" id="userFirstName" placeholder="Name">
+<br> <br>
+    <label for="userSecondName">Second Name</label>
+    <input type="text" id="userSecondName" placeholder="Name">
     <button type="button" id="submitButton">Submit</button>
 </form>
 
@@ -39,7 +42,8 @@
     </thead>
     <tbody>
     <tr>
-        <td id="outputCell">Your text will appear here</td>
+        <td id="outputUserFirstName">First Name</td>
+        <td id="outputUserSecondName">Second Name</td>
     </tr>
     </tbody>
 </table>
@@ -48,19 +52,19 @@
   // JavaScript to handle input and display the output
   document.getElementById('submitButton').addEventListener('click', function() {
     // Get the value from the input field
-    const userInput = document.getElementById('userInput').value;
-
+    const userFirstName = document.getElementById('userFirstName').value;
+    const userSecondName = document.getElementById('userSecondName').value;
     // Check if the input field is empty
-    if (userInput.trim() === "") {
+    if (userFirstName.trim() === "") {
       alert("Please enter some text!");
       return;
     }
 
     // Display the text in the table cell
-    document.getElementById('outputCell').textContent = userInput;
-
+    document.getElementById('outputUserFirstName').textContent = userFirstName;
+    document.getElementById('outputUserSecondName').textContent = userSecondName;
     // Clear the input field
-    document.getElementById('userInput').value = "";
+    document.getElementById('userFirstName').value = "";
   });
 </script>
 </body>
