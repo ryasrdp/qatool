@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petition for space travel</title>
+    <title>Petition for Space Travel</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,18 +18,180 @@
             padding: 8px;
             text-align: left;
         }
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-<h1>Form with Output</h1>
+<h1>Petition for Space Travel</h1>
 
-<!-- Form with a text input field and a button -->
+<!-- Personal Information Section -->
+<div class="section-title">1. Personal Information</div>
 <form id="myForm">
     <label for="userFirstName">First Name</label>
-    <input type="text" id="userFirstName" placeholder="Name">
-<br> <br>
-    <label for="userSecondName">Second Name</label>
-    <input type="text" id="userSecondName" placeholder="Name">
+    <input type="text" id="userFirstName" placeholder="Enter your first name">
+    <br><br>
+    <label for="userMiddleName">Middle Name</label>
+    <input type="text" id="userMiddleName" placeholder="Enter your middle name">
+    <br><br>
+    <label for="userLastName">Last Name</label>
+    <input type="text" id="userLastName" placeholder="Enter your last name">
+    <br><br>
+    <label for="userBirthDate">Date of Birth</label>
+    <input type="date" id="userBirthDate">
+    <br><br>
+    <label for="userBirthPlace">Place of Birth</label>
+    <input type="text" id="userBirthPlace" placeholder="Enter your place of birth">
+    <br><br>
+    <label for="userNationality">Nationality</label>
+    <input type="text" id="userNationality" placeholder="Enter your nationality">
+    <br><br>
+    <label for="userCitizenship">Citizenship</label>
+    <input type="text" id="userCitizenship" placeholder="Enter your citizenship">
+    <br><br>
+    <label>Gender</label>
+    <br>
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label>
+    <br>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label>
+    <br><br>
+    <label>Marital Status</label>
+    <br>
+    <input type="radio" id="single" name="maritalStatus" value="Single">
+    <label for="single">Single</label>
+    <br>
+    <input type="radio" id="married" name="maritalStatus" value="Married">
+    <label for="married">Married</label>
+    <br>
+    <input type="radio" id="divorced" name="maritalStatus" value="Divorced">
+    <label for="divorced">Divorced</label>
+    <br>
+    <input type="radio" id="widowed" name="maritalStatus" value="Widowed">
+    <label for="widowed">Widowed</label>
+    <br><br>
+
+    <!-- Children Section -->
+    <div class="section-title">2. Children</div>
+    <label for="childrenCount">Do you have children?</label>
+    <br>
+    <input type="radio" id="childrenYes" name="hasChildren" value="Yes">
+    <label for="childrenYes">Yes</label>
+    <br>
+    <input type="radio" id="childrenNo" name="hasChildren" value="No">
+    <label for="childrenNo">No</label>
+    <br><br>
+    <label for="childrenCount">Number of Children</label>
+    <input type="number" id="childrenCount" placeholder="Enter number of children">
+    <br><br>
+    <label for="child1Name">Child 1 Name</label>
+    <input type="text" id="child1Name" placeholder="Enter name of first child">
+    <br><br>
+    <label for="child1BirthDate">Child 1 Date of Birth</label>
+    <input type="date" id="child1BirthDate">
+    <br><br>
+    <label for="child2Name">Child 2 Name</label>
+    <input type="text" id="child2Name" placeholder="Enter name of second child">
+    <br><br>
+    <label for="child2BirthDate">Child 2 Date of Birth</label>
+    <input type="date" id="child2BirthDate">
+    <br><br>
+
+    <!-- Education Section -->
+    <div class="section-title">3. Education</div>
+    <label for="educationLevel">Education Level</label>
+    <br>
+    <select id="educationLevel">
+        <option value="High School">High School</option>
+        <option value="Higher Education">Higher Education</option>
+        <option value="Incomplete Higher Education">Incomplete Higher Education</option>
+        <option value="Vocational/Technical">Vocational/Technical</option>
+        <option value="Other">Other</option>
+    </select>
+    <br><br>
+    <label for="institutionName">Institution Name</label>
+    <input type="text" id="institutionName" placeholder="Enter the name of your institution">
+    <br><br>
+    <label for="graduationYear">Year of Graduation</label>
+    <input type="number" id="graduationYear" placeholder="Enter year of graduation">
+    <br><br>
+    <label for="specialization">Specialization</label>
+    <input type="text" id="specialization" placeholder="Enter your specialization">
+    <br><br>
+    <label for="otherEducation">Other</label>
+    <input type="text" id="otherEducation" placeholder="Other">
+    <br><br>
+
+    <!-- Work Section -->
+    <div class="section-title">4. Work</div>
+    <label for="employmentStatus">Employment Status</label>
+    <br>
+    <select id="employmentStatus">
+        <option value="Employed">Employed</option>
+        <option value="Unemployed">Unemployed</option>
+        <option value="Retired">Retired</option>
+        <option value="Student">Student</option>
+        <option value="Self-Employed">Self-Employed</option>
+        <option value="Other">Other</option>
+    </select>
+    <br><br>
+    <label for="workplace">Workplace</label>
+    <input type="text" id="workplace" placeholder="Enter your workplace">
+    <br><br>
+    <label for="position">Position</label>
+    <input type="text" id="position" placeholder="Enter your position">
+    <br><br>
+    <label for="workExperience">Work Experience (years)</label>
+    <input type="number" id="workExperience" placeholder="Enter years of experience">
+    <br><br>
+
+    <!-- Criminal Record Section -->
+    <div class="section-title">5. Criminal Record</div>
+    <label>Do you have a criminal record?</label>
+    <br>
+    <input type="radio" id="criminalYes" name="criminalRecord" value="Yes">
+    <label for="criminalYes">Yes</label>
+    <br>
+    <input type="radio" id="criminalNo" name="criminalRecord" value="No">
+    <label for="criminalNo">No</label>
+    <br><br>
+
+    <!-- Travel Purpose Section -->
+    <div class="section-title">6. Purpose of Travel</div>
+    <label for="travelPurpose">Purpose of Travel</label>
+    <br>
+    <select id="travelPurpose">
+        <option value="Tourism">Tourism</option>
+        <option value="Business">Business</option>
+        <option value="Education">Education</option>
+        <option value="Medical Treatment">Medical Treatment</option>
+        <option value="Visiting Relatives">Visiting Relatives</option>
+        <option value="Other">Other</option>
+    </select>
+    <br><br>
+    <label for="travelDate">Planned Date of Travel</label>
+    <input type="date" id="travelDate">
+    <br><br>
+    <label for="travelDuration">Duration of Travel (days)</label>
+    <input type="number" id="travelDuration" placeholder="Enter duration in days">
+    <br><br>
+
+    <!-- Contact Information Section -->
+    <div class="section-title">7. Contact Information</div>
+    <label for="address">Address</label>
+    <input type="text" id="address" placeholder="Enter your address">
+    <br><br>
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" placeholder="Enter your phone number">
+    <br><br>
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter your email">
+    <br><br>
+
+    <!-- Submit Button -->
     <button type="button" id="submitButton">Submit</button>
 </form>
 
@@ -43,7 +205,8 @@
     <tbody>
     <tr>
         <td id="outputUserFirstName">First Name</td>
-        <td id="outputUserSecondName">Second Name</td>
+        <td id="outputUserLastName">Last Name</td>
+        <td id="outputUserBirthDate">Birth Date</td>
     </tr>
     </tbody>
 </table>
@@ -51,20 +214,15 @@
 <script>
   // JavaScript to handle input and display the output
   document.getElementById('submitButton').addEventListener('click', function() {
-    // Get the value from the input field
+    // Get the values from the input fields
     const userFirstName = document.getElementById('userFirstName').value;
-    const userSecondName = document.getElementById('userSecondName').value;
-    // Check if the input field is empty
-    if (userFirstName.trim() === "") {
-      alert("Please enter some text!");
-      return;
-    }
+    const userLastName = document.getElementById('userLastName').value;
+    const userBirthDate = document.getElementById('userBirthDate').value;
 
-    // Display the text in the table cell
+    // Display the text in the table cells
     document.getElementById('outputUserFirstName').textContent = userFirstName;
-    document.getElementById('outputUserSecondName').textContent = userSecondName;
-    // Clear the input field
-    document.getElementById('userFirstName').value = "";
+    document.getElementById('outputUserLastName').textContent = userLastName;
+    document.getElementById('outputUserBirthDate').textContent = userBirthDate;
   });
 </script>
 </body>
