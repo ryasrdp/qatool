@@ -199,15 +199,11 @@
 <table>
     <thead>
     <tr>
-        <th>Output</th>
+        <th>Output Type</th>
+        <th>Details</th>
     </tr>
     </thead>
-    <tbody>
-    <tr>
-        <td id="outputUserFirstName">First Name</td>
-        <td id="outputUserLastName">Last Name</td>
-        <td id="outputUserBirthDate">Birth Date</td>
-    </tr>
+    <tbody id="outputTable">
     </tbody>
 </table>
 
@@ -215,14 +211,56 @@
   // JavaScript to handle input and display the output
   document.getElementById('submitButton').addEventListener('click', function() {
     // Get the values from the input fields
-    const userFirstName = document.getElementById('userFirstName').value;
-    const userLastName = document.getElementById('userLastName').value;
-    const userBirthDate = document.getElementById('userBirthDate').value;
+    const formValues = {
+      userFirstName: document.getElementById('userFirstName').value,
+      userMiddleName: document.getElementById('userMiddleName').value,
+      userLastName: document.getElementById('userLastName').value,
+      userBirthDate: document.getElementById('userBirthDate').value,
+      userBirthPlace: document.getElementById('userBirthPlace').value,
+      userNationality: document.getElementById('userNationality').value,
+      userCitizenship: document.getElementById('userCitizenship').value,
+      gender: document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '',
+      maritalStatus: document.querySelector('input[name="maritalStatus"]:checked') ? document.querySelector('input[name="maritalStatus"]:checked').value : '',
+      hasChildren: document.querySelector('input[name="hasChildren"]:checked') ? document.querySelector('input[name="hasChildren"]:checked').value : '',
+      childrenCount: document.getElementById('childrenCount').value,
+      child1Name: document.getElementById('child1Name').value,
+      child1BirthDate: document.getElementById('child1BirthDate').value,
+      child2Name: document.getElementById('child2Name').value,
+      child2BirthDate: document.getElementById('child2BirthDate').value,
+      educationLevel: document.getElementById('educationLevel').value,
+      institutionName: document.getElementById('institutionName').value,
+      graduationYear: document.getElementById('graduationYear').value,
+      specialization: document.getElementById('specialization').value,
+      otherEducation: document.getElementById('otherEducation').value,
+      employmentStatus: document.getElementById('employmentStatus').value,
+      workplace: document.getElementById('workplace').value,
+      position: document.getElementById('position').value,
+      workExperience: document.getElementById('workExperience').value,
+      criminalRecord: document.querySelector('input[name="criminalRecord"]:checked') ? document.querySelector('input[name="criminalRecord"]:checked').value : '',
+      travelPurpose: document.getElementById('travelPurpose').value,
+      travelDate: document.getElementById('travelDate').value,
+      travelDuration: document.getElementById('travelDuration').value,
+      address: document.getElementById('address').value,
+      phone: document.getElementById('phone').value,
+      email: document.getElementById('email').value
+    };
 
-    // Display the text in the table cells
-    document.getElementById('outputUserFirstName').textContent = userFirstName;
-    document.getElementById('outputUserLastName').textContent = userLastName;
-    document.getElementById('outputUserBirthDate').textContent = userBirthDate;
+    const outputTable = document.getElementById('outputTable');
+    outputTable.innerHTML = '';
+
+    for (const [key, value] of Object.entries(formValues)) {
+      const newRow = document.createElement('tr');
+      const typeCell = document.createElement('td');
+      const valueCell = document.createElement('td');
+
+      typeCell.textContent = key;
+      valueCell.textContent = value;
+
+      newRow.appendChild(typeCell);
+      newRow.appendChild(valueCell);
+
+      outputTable.appendChild(newRow);
+    }
   });
 </script>
 </body>
