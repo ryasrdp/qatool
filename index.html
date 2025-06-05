@@ -213,22 +213,24 @@
     </thead>
     <tbody>
     <tr>
-        <td>First Name</td>
-        <td>Middle Name</td>
-        <td>Last Name</td>
-        <td>Date of Birth</td>
-        <td>Birthplace</td>
-        <td>Nationality</td>
-        <td>Gender</td>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Birthplace</th>
+        <th>Nationality</th>
+        <th>Citizenship</th>
+        <th>Gender</th>
     </tr>
     <tr>
-        <td id="outputUserFirstName">First Name</td>
-        <td id="outputUserMiddleName">Middle Name</td>
-        <td id="outputUserLastName">Last Name</td>
-        <td id="outputUserBirthDate">Birth Date</td>
-        <td id="outputUserBirthPlace">Birthplace</td>
-        <td id="outputUserNationality">Nationality</td>
-        <td id="outputUserGender">Gender</td>
+        <td id="outputUserFirstName"></td>
+        <td id="outputUserMiddleName"></td>
+        <td id="outputUserLastName"></td>
+        <td id="outputUserBirthDate"></td>
+        <td id="outputUserBirthPlace"></td>
+        <td id="outputUserNationality"></td>
+        <td id="outputUserCitizenship"></td>
+        <td id="outputUserGender"></td>
     </tr>
     </tbody>
 </table>
@@ -236,25 +238,34 @@
 <script>
   // JavaScript to handle input and display the output
   document.getElementById('submitButton').addEventListener('click', function() {
-    document.getElementById('firstNameError').textContent = '';
-    document.getElementById('lastNameError').textContent = '';
+    const firstNameError = document.getElementById('firstNameError');
+    const lastNameError = document.getElementById('lastNameError');
+    const genderError = document.getElementById('genderError');
+
+    firstNameError.textContent = '';
+    lastNameError.textContent = '';
+    genderError.textContent = '';
 
     // Get the values from the input fields
-    const userFirstName = document.getElementById('userFirstName');
-    const userLastName = document.getElementById('userLastName');
-
+    const userFirstName = document.getElementById('userFirstName').value.trim();
+    const userMiddleName = document.getElementById('userMiddleName').value.trim();
+    const userLastName = document.getElementById('userLastName').value.trim();
+    const userBirthDate = document.getElementById('userBirthDate').value;
+    const userBirthPlace = document.getElementById('userBirthPlace').value.trim();
+    const userNationality = document.getElementById('userNationality').value.trim();
+    const userCitizenship = document.getElementById('userCitizenship').value.trim();
     const genderRadioButtons = document.querySelectorAll('input[name="gender"]');
-    let selectedGender;
+    let selectedGender = '';
 
     let isValid = true;
 
-    if (userFirstName.value.trim() === '') {
-      document.getElementById('firstNameError').textContent = 'First Name is required.';
+    if (userFirstName === '') {
+      firstNameError.textContent = 'First Name is required.';
       isValid = false;
     }
 
-    if (userLastName.value.trim() === '') {
-      document.getElementById('lastNameError').textContent = 'Last Name is required.';
+    if (userLastName === '') {
+      lastNameError.textContent = 'Last Name is required.';
       isValid = false;
     }
 
@@ -266,35 +277,29 @@
         break;
       }
     }
-    console.log(selectedGender);
+
     if (!genderSelected) {
-      document.getElementById('genderError').textContent = 'Gender is required.';
+      genderError.textContent = 'Gender is required.';
       isValid = false;
     } else {
-      document.getElementById('genderError').textContent = '';
+      genderError.textContent = '';
     }
 
     if (!isValid) {
       return;
     }
-// Get the values from the input fields
-    const userMiddleName = document.getElementById('userMiddleName').value;
-    const userBirthDate = document.getElementById('userBirthDate').value;
-    const userBirthPlace = document.getElementById('userBirthPlace').value;
-    const userNationality = document.getElementById('userNationality').value;
-    const userCitizenship = document.getElementById('userCitizenship').value;
-
 
     // Display the text in the table cells
-    document.getElementById('outputUserFirstName').textContent = userFirstName.value;
+    document.getElementById('outputUserFirstName').textContent = userFirstName;
     document.getElementById('outputUserMiddleName').textContent = userMiddleName;
-    document.getElementById('outputUserLastName').textContent = userLastName.value;
+    document.getElementById('outputUserLastName').textContent = userLastName;
     document.getElementById('outputUserBirthDate').textContent = userBirthDate;
     document.getElementById('outputUserBirthPlace').textContent = userBirthPlace;
     document.getElementById('outputUserNationality').textContent = userNationality;
     document.getElementById('outputUserCitizenship').textContent = userCitizenship;
     document.getElementById('outputUserGender').textContent = selectedGender;
   });
+
 </script>
 </body>
 </html>
