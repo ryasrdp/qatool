@@ -12,6 +12,7 @@
         table {
             margin-top: 20px;
             border-collapse: collapse;
+            width: 100%;
         }
         th, td {
             border: 1px solid #ddd;
@@ -27,6 +28,14 @@
             font-size: 0.9em;
             margin-left: 5px;
         }
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+            table, th, td {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -34,7 +43,7 @@
 
 <!-- Personal Information Section -->
 <div class="section-title">1. Personal Information</div>
-<form id="myForm">
+<form id="spaceTravelPetitionForm">
     <label for="userFirstName">First Name</label>
     <input type="text" id="userFirstName" placeholder="Enter your first name">
     <span class="error-message" id="firstNameError"></span>
@@ -208,7 +217,7 @@
 <table>
     <thead>
     <tr>
-        <th>Output</th>
+        <th>1. Personal Information</th>
     </tr>
     </thead>
     <tbody>
@@ -221,6 +230,7 @@
         <th>Nationality</th>
         <th>Citizenship</th>
         <th>Gender</th>
+        <th>Marital Status</th>
     </tr>
     <tr>
         <td id="outputUserFirstName"></td>
@@ -231,6 +241,7 @@
         <td id="outputUserNationality"></td>
         <td id="outputUserCitizenship"></td>
         <td id="outputUserGender"></td>
+        <td id="outputMaritalStatus"></td>
     </tr>
     </tbody>
 </table>
@@ -255,7 +266,9 @@
     const userNationality = document.getElementById('userNationality').value.trim();
     const userCitizenship = document.getElementById('userCitizenship').value.trim();
     const genderRadioButtons = document.querySelectorAll('input[name="gender"]');
+    const maritalStatusRadioButtons = document.querySelectorAll('input[name="maritalStatus"]');
     let selectedGender = '';
+    let selectedMaritalStatus = '';
 
     let isValid = true;
 
@@ -274,6 +287,15 @@
       if (radioButton.checked) {
         selectedGender = radioButton.value;
         genderSelected = true;
+        break;
+      }
+    }
+
+    let maritalStatusSelected = false;
+    for (const radioButton of maritalStatusRadioButtons) {
+      if (radioButton.checked) {
+        selectedMaritalStatus = radioButton.value;
+        maritalStatusSelected = true;
         break;
       }
     }
@@ -298,6 +320,7 @@
     document.getElementById('outputUserNationality').textContent = userNationality;
     document.getElementById('outputUserCitizenship').textContent = userCitizenship;
     document.getElementById('outputUserGender').textContent = selectedGender;
+    document.getElementById('outputMaritalStatus').textContent = selectedMaritalStatus;
   });
 
 </script>
