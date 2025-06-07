@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Application Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+            color: #333;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1 0 300px;
+            margin-right: 20px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            margin-bottom: 8px;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .required::after {
+            content: " *";
+            color: red;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+
+        .btn-reset {
+            background-color: #f44336;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .progress {
+            width: 0%;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .form-group {
+                flex: 1 0 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+    <script src="https://lib.youware.com/youware-lib.1747145198.js" id="yourware-lib"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Comprehensive Application Form</h1>
+
+    <div class="progress-bar">
+        <div class="progress" id="progress" style="width: 7%;">7%</div>
+    </div>
+
+    <form id="comprehensive-form">
+        <!-- Personal Information Section -->
+        <div class="form-section" id="personal-info">
+            <h2 class="section-title">Personal Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName" class="required">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required="">
+                </div>
+                <div class="form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" id="middleName" name="middleName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="required">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dob" class="required">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required="">
+                </div>
+                <div class="form-group">
+                    <label for="gender" class="required">Gender</label>
+                    <select id="gender" name="gender" required="">
+                        <option value="">-- Select Gender --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="non-binary">Non-binary</option>
+                        <option value="other">Other</option>
+                        <option value="prefer-not">Prefer not to say</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nationality</label>
+                    <input type="text" id="nationality" name="nationality">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="maritalStatus">Marital Status</label>
+                    <select id="maritalStatus" name="maritalStatus">
+                        <option value="">-- Select Marital Status --</option>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>
+                        <option value="separated">Separated</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ssn">Social Security Number</label>
+                    <input type="text" id="ssn" name="ssn" placeholder="XXX-XX-XXXX">
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="form-section" id="contact-info">
+            <h2 class="section-title">Contact Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" required="">
+                </div>
+                <div class="form-group">
+                    <label for="confirmEmail" class="required">Confirm Email</label>
+                    <input type="email" id="confirmEmail" name="confirmEmail" required="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone" class="required">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(XXX) XXX-XXXX" required="">
+                </div>
+                <div class="form-group">
+                    <label for="altPhone">Alternative Phone</label>
+                    <input type="tel" id="altPhone" name="altPhone" placeholder="(XXX) XXX-XXXX">
+                </div>
+                <div class="form-group">
+                    <label for="preferredContact">Preferred Contact Method</label>
+                    <select id="preferredContact" name="preferredContact">
+                        <option value="">-- Select Preferred Method --</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="text">Text Message</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="emergencyContactName">Emergency Contact Name</label>
+                    <input type="text" id="emergencyContactName" name="emergencyContactName">
+                </div>
+                <div class="form-group">
+                    <label for="emergencyContactRelation">Relationship</label>
+                    <input type="text" id="emergencyContactRelation" name="emergencyContactRelation">
+                </div>
+                <div class="form-group">
+                    <label for="emergencyContactPhone">Emergency Contact Phone</label>
+                    <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone"
+                           placeholder="(XXX) XXX-XXXX">
+                </div>
+            </div>
+        </div>
+
+        <!-- Race section-->
+        <div class="form-section" id="race-info">
+            <h2 class="section-title">Race Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="race" >Race</label>
+                    <input type="text" id="race" name="race">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="circumstances">* Where, when and under what circumstances did he end up on planet Earth?</label>
+                    <input type="text" id="circumstances" name="circumstances">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="collaboration">* Who did you collaborate with on planet Earth?</label>
+                    <input type="text" id="collaboration" name="collaboration">
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="additionalAlienInfo">* What else would you like to tell us about yourself??</label>
+                    <input type="text" id="additionalAlienInfo" name="additionalAlienInfo">
+                </div>
+            </div>
+        </div>
+
+        <!-- Address Section -->
+        <div class="form-section" id="address-info">
+            <h2 class="section-title">Address Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="solarSystem" class="required">Solar system</label>
+                    <input type="text" id="solarSystem" name="solarSystem" required="">
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="planet" class="required">Planet</label>
+                    <input type="text" id="planet" name="planet" required="">
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="streetAddress" class="required">Street Address</label>
+                    <input type="text" id="streetAddress" name="streetAddress" required="">
+                </div>
+                <div class="form-group">
+                    <label for="streetAddressLine2">Address Line 2</label>
+                    <input type="text" id="streetAddressLine2" name="streetAddressLine2"
+                           placeholder="Apartment, suite, unit, building, floor, etc.">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="city" class="required">City</label>
+                    <input type="text" id="city" name="city" required="">
+                </div>
+                <div class="form-group">
+                    <label for="state" class="required">State/Province</label>
+                    <input type="text" id="state" name="state" required="">
+                </div>
+                <div class="form-group">
+                    <label for="zipCode" class="required">ZIP/Postal Code</label>
+                    <input type="text" id="zipCode" name="zipCode" required="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="country" class="required">Country</label>
+                    <select id="country" name="country" required="">
+                        <option value="">-- Select Country --</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="au">Australia</option>
+                        <!-- More countries would be added here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="residenceType">Residence Type</label>
+                    <select id="residenceType" name="residenceType">
+                        <option value="">-- Select Type --</option>
+                        <option value="own">Own</option>
+                        <option value="rent">Rent</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="yearsAtAddress">Years at Current Address</label>
+                    <input type="number" id="yearsAtAddress" name="yearsAtAddress" min="0" step="1">
+                </div>
+                <div class="form-group">
+                    <label for="monthsAtAddress">Months at Current Address</label>
+                    <input type="number" id="monthsAtAddress" name="monthsAtAddress" min="0" max="11" step="1">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Previous Address (if less than 2 years at current)</label>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="noPreviousAddress" name="noPreviousAddress">
+                        <label for="noPreviousAddress">I have lived at my current address for 2+ years</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="previousAddressSection">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prevStreetAddress">Previous Street Address</label>
+                        <input type="text" id="prevStreetAddress" name="prevStreetAddress">
+                    </div>
+                    <div class="form-group">
+                        <label for="prevStreetAddressLine2">Previous Address Line 2</label>
+                        <input type="text" id="prevStreetAddressLine2" name="prevStreetAddressLine2">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prevCity">Previous City</label>
+                        <input type="text" id="prevCity" name="prevCity">
+                    </div>
+                    <div class="form-group">
+                        <label for="prevState">Previous State/Province</label>
+                        <input type="text" id="prevState" name="prevState">
+                    </div>
+                    <div class="form-group">
+                        <label for="prevZipCode">Previous ZIP/Postal Code</label>
+                        <input type="text" id="prevZipCode" name="prevZipCode">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prevCountry">Previous Country</label>
+                        <select id="prevCountry" name="prevCountry">
+                            <option value="">-- Select Country --</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                            <!-- More countries would be added here -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Employment Section -->
+        <div class="form-section" id="employment-info">
+            <h2 class="section-title">Employment Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="employmentStatus" class="required">Current Employment Status</label>
+                    <select id="employmentStatus" name="employmentStatus" required="">
+                        <option value="">-- Select Status --</option>
+                        <option value="fulltime">Full-time</option>
+                        <option value="parttime">Part-time</option>
+                        <option value="selfemployed">Self-employed</option>
+                        <option value="unemployed">Unemployed</option>
+                        <option value="student">Student</option>
+                        <option value="retired">Retired</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="occupation">Occupation/Job Title</label>
+                    <input type="text" id="occupation" name="occupation">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="employer">Current Employer</label>
+                    <input type="text" id="employer" name="employer">
+                </div>
+                <div class="form-group">
+                    <label for="workPhone">Work Phone</label>
+                    <input type="tel" id="workPhone" name="workPhone" placeholder="(XXX) XXX-XXXX">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="employerAddress">Employer Address</label>
+                    <input type="text" id="employerAddress" name="employerAddress">
+                </div>
+                <div class="form-group">
+                    <label for="employerCity">Employer City</label>
+                    <input type="text" id="employerCity" name="employerCity">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="employerState">Employer State/Province</label>
+                    <input type="text" id="employerState" name="employerState">
+                </div>
+                <div class="form-group">
+                    <label for="employerZip">Employer ZIP/Postal Code</label>
+                    <input type="text" id="employerZip" name="employerZip">
+                </div>
+                <div class="form-group">
+                    <label for="employerCountry">Employer Country</label>
+                    <input type="text" id="employerCountry" name="employerCountry">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="startDate">Employment Start Date</label>
+                    <input type="date" id="startDate" name="startDate">
+                </div>
+                <div class="form-group">
+                    <label for="yearsEmployed">Years at Current Employer</label>
+                    <input type="number" id="yearsEmployed" name="yearsEmployed" min="0" step="1">
+                </div>
+                <div class="form-group">
+                    <label for="monthsEmployed">Months at Current Employer</label>
+                    <input type="number" id="monthsEmployed" name="monthsEmployed" min="0" max="11" step="1">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="annualIncome">Annual Income</label>
+                    <input type="number" id="annualIncome" name="annualIncome" min="0" step="1000" placeholder="$">
+                </div>
+                <div class="form-group">
+                    <label for="incomeType">Income Type</label>
+                    <select id="incomeType" name="incomeType">
+                        <option value="">-- Select Type --</option>
+                        <option value="salary">Salary</option>
+                        <option value="hourly">Hourly wage</option>
+                        <option value="commission">Commission</option>
+                        <option value="mixed">Mixed</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Previous Employment (if less than 2 years at current)</label>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="noPreviousEmployment" name="noPreviousEmployment">
+                        <label for="noPreviousEmployment">I have worked at my current employer for 2+ years</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="previousEmploymentSection">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prevEmployer">Previous Employer</label>
+                        <input type="text" id="prevEmployer" name="prevEmployer">
+                    </div>
+                    <div class="form-group">
+                        <label for="prevOccupation">Previous Job Title</label>
+                        <input type="text" id="prevOccupation" name="prevOccupation">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prevEmployerAddress">Previous Employer Address</label>
+                        <input type="text" id="prevEmployerAddress" name="prevEmployerAddress">
+                    </div>
+                    <div class="form-group">
+                        <label for="prevEmployerCity">Previous Employer City</label>
+                        <input type="text" id="prevEmployerCity" name="prevEmployerCity">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prevEmploymentStartDate">Start Date</label>
+                        <input type="date" id="prevEmploymentStartDate" name="prevEmploymentStartDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="prevEmploymentEndDate">End Date</label>
+                        <input type="date" id="prevEmploymentEndDate" name="prevEmploymentEndDate">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="form-section" id="education-info">
+            <h2 class="section-title">Education Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="highestEducation" class="required">Highest Level of Education</label>
+                    <select id="highestEducation" name="highestEducation" required="">
+                        <option value="">-- Select Level --</option>
+                        <option value="highschool">High School Diploma</option>
+                        <option value="associates">Associate's Degree</option>
+                        <option value="bachelors">Bachelor's Degree</option>
+                        <option value="masters">Master's Degree</option>
+                        <option value="doctorate">Doctorate/PhD</option>
+                        <option value="professional">Professional Degree</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- High School Information -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="highSchoolName">High School Name</label>
+                    <input type="text" id="highSchoolName" name="highSchoolName">
+                </div>
+                <div class="form-group">
+                    <label for="highSchoolLocation">High School Location (City, State/Country)</label>
+                    <input type="text" id="highSchoolLocation" name="highSchoolLocation">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="highSchoolGradYear">Year of Graduation</label>
+                    <input type="number" id="highSchoolGradYear" name="highSchoolGradYear" min="1950" max="2030">
+                </div>
+                <div class="form-group">
+                    <label for="diplomaReceived">Diploma Received</label>
+                    <select id="diplomaReceived" name="diplomaReceived">
+                        <option value="">-- Select --</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="ged">GED</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- College Information -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="collegeName">College/University Name</label>
+                    <input type="text" id="collegeName" name="collegeName">
+                </div>
+                <div class="form-group">
+                    <label for="collegeLocation">College Location (City, State/Country)</label>
+                    <input type="text" id="collegeLocation" name="collegeLocation">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="degreeEarned">Degree Earned</label>
+                    <input type="text" id="degreeEarned" name="degreeEarned">
+                </div>
+                <div class="form-group">
+                    <label for="majorField">Major/Field of Study</label>
+                    <input type="text" id="majorField" name="majorField">
+                </div>
+                <div class="form-group">
+                    <label for="minorField">Minor (if applicable)</label>
+                    <input type="text" id="minorField" name="minorField">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="collegeStartYear">Start Year</label>
+                    <input type="number" id="collegeStartYear" name="collegeStartYear" min="1950" max="2030">
+                </div>
+                <div class="form-group">
+                    <label for="collegeEndYear">End Year (or Expected)</label>
+                    <input type="number" id="collegeEndYear" name="collegeEndYear" min="1950" max="2030">
+                </div>
+                <div class="form-group">
+                    <label for="gpa">GPA</label>
+                    <input type="number" id="gpa" name="gpa" min="0" max="4.0" step="0.01">
+                </div>
+            </div>
+
+            <!-- Graduate School Information -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="gradSchoolName">Graduate School Name</label>
+                    <input type="text" id="gradSchoolName" name="gradSchoolName">
+                </div>
+                <div class="form-group">
+                    <label for="gradSchoolLocation">Graduate School Location</label>
+                    <input type="text" id="gradSchoolLocation" name="gradSchoolLocation">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="gradDegree">Graduate Degree</label>
+                    <input type="text" id="gradDegree" name="gradDegree">
+                </div>
+                <div class="form-group">
+                    <label for="gradField">Field of Study</label>
+                    <input type="text" id="gradField" name="gradField">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="gradStartYear">Start Year</label>
+                    <input type="number" id="gradStartYear" name="gradStartYear" min="1950" max="2030">
+                </div>
+                <div class="form-group">
+                    <label for="gradEndYear">End Year (or Expected)</label>
+                    <input type="number" id="gradEndYear" name="gradEndYear" min="1950" max="2030">
+                </div>
+                <div class="form-group">
+                    <label for="gradGpa">GPA</label>
+                    <input type="number" id="gradGpa" name="gradGpa" min="0" max="4.0" step="0.01">
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills & Qualifications Section -->
+        <div class="form-section" id="skills-info">
+            <h2 class="section-title">Skills &amp; Qualifications</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="professionalSkills">Professional Skills</label>
+                    <textarea id="professionalSkills" name="professionalSkills"
+                              placeholder="List relevant professional skills..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="technicalSkills">Technical Skills</label>
+                    <textarea id="technicalSkills" name="technicalSkills"
+                              placeholder="List relevant technical skills, software proficiency, etc..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="languages">Languages Spoken</label>
+                    <textarea id="languages" name="languages"
+                              placeholder="List languages and proficiency levels..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="certifications">Certifications &amp; Licenses</label>
+                    <textarea id="certifications" name="certifications"
+                              placeholder="List relevant certifications, licenses, with dates..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- References Section -->
+        <div class="form-section" id="references-info">
+            <h2 class="section-title">Professional References</h2>
+
+            <!-- Reference 1 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ref1Name">Reference 1 - Full Name</label>
+                    <input type="text" id="ref1Name" name="ref1Name">
+                </div>
+                <div class="form-group">
+                    <label for="ref1Relationship">Relationship</label>
+                    <input type="text" id="ref1Relationship" name="ref1Relationship"
+                           placeholder="Manager, Colleague, etc.">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ref1Company">Company</label>
+                    <input type="text" id="ref1Company" name="ref1Company">
+                </div>
+                <div class="form-group">
+                    <label for="ref1Phone">Phone Number</label>
+                    <input type="tel" id="ref1Phone" name="ref1Phone" placeholder="(XXX) XXX-XXXX">
+                </div>
+                <div class="form-group">
+                    <label for="ref1Email">Email</label>
+                    <input type="email" id="ref1Email" name="ref1Email">
+                </div>
+            </div>
+
+            <!-- Reference 2 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ref2Name">Reference 2 - Full Name</label>
+                    <input type="text" id="ref2Name" name="ref2Name">
+                </div>
+                <div class="form-group">
+                    <label for="ref2Relationship">Relationship</label>
+                    <input type="text" id="ref2Relationship" name="ref2Relationship"
+                           placeholder="Manager, Colleague, etc.">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ref2Company">Company</label>
+                    <input type="text" id="ref2Company" name="ref2Company">
+                </div>
+                <div class="form-group">
+                    <label for="ref2Phone">Phone Number</label>
+                    <input type="tel" id="ref2Phone" name="ref2Phone" placeholder="(XXX) XXX-XXXX">
+                </div>
+                <div class="form-group">
+                    <label for="ref2Email">Email</label>
+                    <input type="email" id="ref2Email" name="ref2Email">
+                </div>
+            </div>
+
+            <!-- Reference 3 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ref3Name">Reference 3 - Full Name</label>
+                    <input type="text" id="ref3Name" name="ref3Name">
+                </div>
+                <div class="form-group">
+                    <label for="ref3Relationship">Relationship</label>
+                    <input type="text" id="ref3Relationship" name="ref3Relationship"
+                           placeholder="Manager, Colleague, etc.">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ref3Company">Company</label>
+                    <input type="text" id="ref3Company" name="ref3Company">
+                </div>
+                <div class="form-group">
+                    <label for="ref3Phone">Phone Number</label>
+                    <input type="tel" id="ref3Phone" name="ref3Phone" placeholder="(XXX) XXX-XXXX">
+                </div>
+                <div class="form-group">
+                    <label for="ref3Email">Email</label>
+                    <input type="email" id="ref3Email" name="ref3Email">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Legal Information Section -->
+        <div class="form-section" id="legal-information-info">
+            <h2 class="section-title">Legal Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="criminalRecord">5. Criminal Record</label>
+                    <textarea id="criminalRecord" name="criminalRecord"
+                              placeholder="Please provide details of any criminal record if applicable..."></textarea>
+                </div>
+            </div>
+
+        </div>
+        <!-- Travel Information Section -->
+        <div class="form-section" id="travel-information-info">
+            <h2 class="section-title">Travel Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="targetSolarSystem" class="required">Solar system</label>
+                    <input type="text" id="targetSolarSystem" name="targetSolarSystem" required="">
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="targetPlanet" class="required">Planet</label>
+                    <input type="text" id="targetPlanet" name="targetPlanet" required="">
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="travelPurpose">Purpose of Travel</label>
+                    <input type="text" id="travelPurpose" name="travelPurpose">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="plannedTravelDate">Planned Date of Travel</label>
+                    <input type="date" id="plannedTravelDate" name="plannedTravelDate">
+                </div>
+                <div class="form-group">
+                    <label for="travelDuration">Duration of Travel (days)</label>
+                    <input type="number" id="travelDuration" name="travelDuration" min="1" step="1">
+                </div>
+            </div>
+        </div>
+
+            <!-- Previous travel -->
+            <div class="form-section" id="previous-travel-information-info">
+                <h2 class="section-title">Previous Travel Information</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="universe" class="required">Universe</label>
+                        <input type="text" id="universe" name="universe" required="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="previousTravelSolarSystem" class="required">Solar system</label>
+                        <input type="text" id="previousTravelSolarSystem" name="previousTravelSolarSystem" required="">
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="previousTravelPlanet" class="required">Planet</label>
+                        <input type="text" id="previousTravelPlanet" name="previousTravelPlanet" required="">
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="previousTravelPurpose">Purpose of Travel</label>
+                        <input type="text" id="previousTravelPurpose" name="previousTravelPurpose">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="previousTravelDate">Date of Travel</label>
+                        <input type="date" id="previousTravelDate" name="previousTravelDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="previousTravelEndDate">End of Travel</label>
+                        <input type="date" id="previousTravelEndDate" name="previousTravelEndDate">
+                    </div>
+                </div>
+            </div>
+
+
+        <!-- Financial Insurance Section -->
+        <div class="form-section" id="financial-security-info">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="financialSecurity">Financial Security</label>
+                <input type="text" id="financialSecurity" name="financialSecurity"
+                       placeholder="Availability of Funds for the Trip">
+            </div>
+        </div>
+        </div>
+
+        <!-- Medical Insurance Section -->
+        <div class="form-section" id="Medical-insurance-info">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="medicalInsurance">Medical Insurance</label>
+                <input type="text" id="medicalInsurance" name="medicalInsurance"
+                       placeholder="Medical Insurance Policy Details">
+            </div>
+        </div>
+        </div>
+        <!-- Physical Information Section -->
+        <div class="form-section" id="physical-info">
+            <h2 class="section-title">Physical Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="clothingSize">Clothing Sizes</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="clothingSize">Clothing Size:</label>
+                    <select id="clothingSize" name="clothingSize">
+                        <option value="">-- Select Size --</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="shoeSize">Shoe Size (EU):</label>
+                    <input type="number" id="shoeSize" name="shoeSize" min="35" max="48" step="0.5">
+                </div>
+                <div class="form-group">
+                    <label for="headCircumference">Head Circumference (cm):</label>
+                    <input type="number" id="headCircumference" name="headCircumference" min="40" max="70" step="0.5">
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information Section -->
+        <div class="form-section" id="additional-info">
+            <h2 class="section-title">Additional Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="additionalInfo">Additional Information or Special Circumstances</label>
+                    <textarea id="additionalInfo" name="additionalInfo"
+                              placeholder="Please provide any additional information that may be relevant to your application..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="howDidYouHear">How did you hear about us?</label>
+                    <select id="howDidYouHear" name="howDidYouHear">
+                        <option value="">-- Select --</option>
+                        <option value="search">Search Engine</option>
+                        <option value="social">Social Media</option>
+                        <option value="friend">Friend/Family Referral</option>
+                        <option value="advertisement">Advertisement</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="referralSource">If referred, by whom?</label>
+                    <input type="text" id="referralSource" name="referralSource">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="startDate">Earliest Start Date</label>
+                    <input type="date" id="startDate" name="startDate">
+                </div>
+                <div class="form-group">
+                    <label for="relocate">Willing to Relocate?</label>
+                    <select id="relocate" name="relocate">
+                        <option value="">-- Select --</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="maybe">Maybe</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Background Check Consent</label>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="backgroundCheckConsent" name="backgroundCheckConsent">
+                        <label for="backgroundCheckConsent">I consent to a background check if required</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Terms and Conditions</label>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="termsAgreement" name="termsAgreement" required="">
+                        <label for="termsAgreement" class="required">I certify that all information provided is true and
+                            complete to the best of my knowledge</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button type="reset" class="btn btn-reset">Reset Form</button>
+            <button type="submit" class="btn">Submit Application</button>
+        </div>
+    </form>
+
+
+    <table>
+        <thead>
+        <tr>
+            <th>1. Personal Information</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+            <td>First Name</td>
+            <td id="outputUserFirstName"> dsd</td>
+            </tr> <tr>
+            <td>Middle Name</td>
+            <td>Last Name</td>
+            <td>Date of Birth</td>
+            <td>Birthplace</td>
+            <td>Nationality</td>
+            <td>Citizenship</td>
+            <td>Gender</td>
+            <td>Marital Status</td>
+        </tr>
+        <tr>
+
+            <td id="outputUserMiddleName"></td>
+            <td id="outputUserLastName"></td>
+            <td id="outputUserBirthDate"></td>
+            <td id="outputUserBirthPlace"></td>
+            <td id="outputUserNationality"></td>
+            <td id="outputUserCitizenship"></td>
+            <td id="outputUserGender"></td>
+            <td id="outputMaritalStatus"></td>
+        </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+  // Form validation and progress tracking logic would go here
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('comprehensive-form');
+    const progressBar = document.getElementById('progress');
+    const requiredFields = document.querySelectorAll('[required]');
+    const totalRequired = requiredFields.length;
+
+    // Update progress bar as required fields are filled
+    function updateProgress() {
+      let filledCount = 0;
+      requiredFields.forEach(field => {
+        if (field.value.trim() !== '') {
+          filledCount++;
+        }
+      });
+
+      const progressPercent = Math.round((filledCount / totalRequired) * 100);
+      progressBar.style.width = progressPercent + '%';
+      progressBar.textContent = progressPercent + '%';
+    }
+
+    // Add event listeners to all form fields
+    const allFields = document.querySelectorAll('input, select, textarea');
+    allFields.forEach(field => {
+      field.addEventListener('change', updateProgress);
+      field.addEventListener('keyup', updateProgress);
+    });
+
+    // Toggle previous address section
+    const noPreviousAddressCheckbox = document.getElementById('noPreviousAddress');
+    const previousAddressSection = document.getElementById('previousAddressSection');
+
+    noPreviousAddressCheckbox.addEventListener('change', function () {
+      previousAddressSection.style.display = this.checked ? 'none' : 'block';
+    });
+
+    // Toggle previous employment section
+    const noPreviousEmploymentCheckbox = document.getElementById('noPreviousEmployment');
+    const previousEmploymentSection = document.getElementById('previousEmploymentSection');
+
+    noPreviousEmploymentCheckbox.addEventListener('change', function () {
+      previousEmploymentSection.style.display = this.checked ? 'none' : 'block';
+    });
+
+    // Form submission
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Basic validation (would be more comprehensive in a real application)
+      let isValid = true;
+      requiredFields.forEach(field => {
+        if (field.value.trim() === '') {
+          isValid = false;
+          field.classList.add('invalid');
+        } else {
+          field.classList.remove('invalid');
+        }
+      });
+
+      if (isValid) {
+        alert('Form submitted successfully! Thank you for your application.');
+        // In a real application, you would submit the form data to a server here
+      } else {
+        alert('Please fill in all required fields marked with an asterisk (*)');
+      }
+    });
+
+    // Initialize display
+    updateProgress();
+  });
+</script>
+
+</body>
+</html>
+
+
+add

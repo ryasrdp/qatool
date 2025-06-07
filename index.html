@@ -39,6 +39,7 @@
     </style>
 </head>
 <body>
+
 <h1>Petition for Space Travel</h1>
 
 <!-- Personal Information Section -->
@@ -121,7 +122,7 @@
     <!-- Education Section -->
     <div class="section-title">3. Education</div>
     <label for="educationLevel">Education Level</label>
-    <br>
+
     <select id="educationLevel">
         <option value="High School">High School</option>
         <option value="Higher Education">Higher Education</option>
@@ -146,7 +147,7 @@
     <!-- Work Section -->
     <div class="section-title">4. Work</div>
     <label for="employmentStatus">Employment Status</label>
-    <br>
+
     <select id="employmentStatus">
         <option value="Employed">Employed</option>
         <option value="Unemployed">Unemployed</option>
@@ -161,6 +162,9 @@
     <br><br>
     <label for="position">Position</label>
     <input type="text" id="position" placeholder="Enter your position">
+    <br><br>
+    <label for="job-title">Job Title</label>
+    <input type="text" id="job-title" name="jobTitle"><br><br>
     <br><br>
     <label for="workExperience">Work Experience (years)</label>
     <input type="number" id="workExperience" placeholder="Enter years of experience">
@@ -180,7 +184,7 @@
     <!-- Travel Purpose Section -->
     <div class="section-title">6. Purpose of Travel</div>
     <label for="travelPurpose">Purpose of Travel</label>
-    <br>
+
     <select id="travelPurpose">
         <option value="Tourism">Tourism</option>
         <option value="Business">Business</option>
@@ -202,12 +206,64 @@
     <label for="address">Address</label>
     <input type="text" id="address" placeholder="Enter your address">
     <br><br>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br><br>
+    <label for="state">State/Province:</label>
+    <input type="text" id="state" name="state" required><br><br>
+    <label for="zip">ZIP/Postal Code:</label>
+    <input type="text" id="zip" name="zip" required><br><br>
     <label for="phone">Phone Number</label>
     <input type="tel" id="phone" placeholder="Enter your phone number">
     <br><br>
     <label for="email">Email</label>
     <input type="email" id="email" placeholder="Enter your email">
     <br><br>
+
+    <!-- Contact Information Section -->
+    <div class="section-title">8. Travel dates</div>
+
+    <label for="travel-start-date">Travel Start Date:</label>
+    <input type="date" id="travel-start-date" name="travel-start-date" required>
+
+    <label for="return-date">Return Date:</label>
+    <input type="date" id="return-date" name="return-date" required>
+
+    <div class="section-title">9. Financial Security</div>
+    <label for="financial-funds">Availability of Funds for the Trip:</label>
+    <textarea id="financial-funds" name="financial-funds" rows="3" placeholder="Provide details of your financial security for the trip..." required></textarea>
+
+    <div class="section-title">10. Medical Insurance</div>
+    <label for="medical-insurance">Medical Insurance Policy Details:</label>
+    <textarea id="medical-insurance" name="medical-insurance" rows="3" placeholder="Provide details of your medical insurance covering the trip..." required></textarea>
+
+
+    <div class="section-title">11. Clothing Sizes</div>
+    <label for="clothing-size">Clothing Size:</label>
+    <select id="clothing-size" name="clothingSize" required>
+        <option value="" disabled selected>Select your clothing size</option>
+        <option value="XS">XS (Extra Small)</option>
+        <option value="S">S (Small)</option>
+        <option value="M">M (Medium)</option>
+        <option value="L">L (Large)</option>
+        <option value="XL">XL (Extra Large)</option>
+        <option value="XXL">XXL (Double Extra Large)</option>
+    </select><br><br>
+
+    <label for="shoe-size">Shoe Size (EU):</label>
+    <input type="number" id="shoe-size" name="shoeSize" placeholder="Enter your shoe size (e.g., 42)" min="35" max="50" required><br><br>
+
+    <label for="head-circumference">Head Circumference (cm):</label>
+    <input type="number" id="head-circumference" name="headCircumference" placeholder="Enter head circumference in cm" min="50" max="70" required><br><br>
+
+
+    <div class="section-title">12. Applicant's Declaration</div>
+    <label for="signature">Signature of the Applicant:</label>
+    <input type="text" id="signature" name="signature" placeholder="Enter your full name as a signature" required>
+    <label for="completion-date">Date of Completion:</label>
+    <input type="date" id="completion-date" name="completion-date" required>
+    <br><br>
+
+
 
     <!-- Submit Button -->
     <button type="button" id="submitButton">Submit</button>
@@ -272,105 +328,177 @@
     </thead>
     <tbody>
     <tr>
-        <th>Education level</th>
+        <th>Education Level</th>
+        <th>Institution Name</th>
+        <th>Year of Graduation</th>
+        <th>Specialization</th>
+        <th>Other</th>
 
     </tr>
     <tr>
         <td id="outputEducationLevel"></td>
+        <td id="outputInstitutionName"></td>
+        <td id="outputGraduationYear"></td>
+        <td id="outputSpecialization"></td>
+        <td id="outputOtherEducation"></td>
 
     </tr>
     </tbody>
 </table>
 
-<script>
-  // JavaScript to handle input and display the output
-  document.getElementById('submitButton').addEventListener('click', function() {
-    const firstNameError = document.getElementById('firstNameError');
-    const lastNameError = document.getElementById('lastNameError');
-    const genderError = document.getElementById('genderError');
+<table>
+    <thead>
+    <tr>
+        <th>4. Work</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>Employment Status</th>
+        <th>Workplace</th>
+        <th>Position</th>
+        <th>Work Experience (years)</th>
+        <th>Job Title</th>
+    </tr>
+    <tr>
+        <td id="outputEmploymentStatus"></td>
+        <td id="outputWorkplace"></td>
+        <td id="outputPosition"></td>
+        <td id="outputWorkExperience"></td>
+        <td id="outputJobTitle"></td>
+    </tr>
+    </tbody>
+</table>
 
-    firstNameError.textContent = '';
-    lastNameError.textContent = '';
-    genderError.textContent = '';
 
-    // Get the values from the input fields
-    const userFirstName = document.getElementById('userFirstName').value.trim();
-    const userMiddleName = document.getElementById('userMiddleName').value.trim();
-    const userLastName = document.getElementById('userLastName').value.trim();
-    const userBirthDate = document.getElementById('userBirthDate').value;
-    const userBirthPlace = document.getElementById('userBirthPlace').value.trim();
-    const userNationality = document.getElementById('userNationality').value.trim();
-    const userCitizenship = document.getElementById('userCitizenship').value.trim();
-    const genderRadioButtons = document.querySelectorAll('input[name="gender"]');
-    const maritalStatusRadioButtons = document.querySelectorAll('input[name="maritalStatus"]');
-    const hasChildrenRadioButtons = document.querySelectorAll('input[name="hasChildren"]');
-    let selectedGender = '';
-    let selectedMaritalStatus = '';
-    let selectedHasChildren = '';
+<table>
+    <thead>
+    <tr>
+        <th>5. Criminal Record</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
 
-    let isValid = true;
+    </tr>
+    <tr>
 
-    if (userFirstName === '') {
-      firstNameError.textContent = 'First Name is required.';
-      isValid = false;
-    }
+    </tr>
+    </tbody>
+</table>
 
-    if (userLastName === '') {
-      lastNameError.textContent = 'Last Name is required.';
-      isValid = false;
-    }
+<table>
+    <thead>
+    <tr>
+        <th>6. Purpose of Travel</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
 
-    let genderSelected = false;
-    for (const radioButton of genderRadioButtons) {
-      if (radioButton.checked) {
-        selectedGender = radioButton.value;
-        genderSelected = true;
-        break;
-      }
-    }
+    </tr>
+    <tr>
 
-    let maritalStatusSelected = false;
-    for (const radioButton of maritalStatusRadioButtons) {
-      if (radioButton.checked) {
-        selectedMaritalStatus = radioButton.value;
-        maritalStatusSelected = true;
-        break;
-      }
-    }
+    </tr>
+    </tbody>
+</table>
 
-    let hasChildrenSelected = false;
-    for (const radioButton of hasChildrenRadioButtons) {
-      if (radioButton.checked) {
-        selectedHasChildren = radioButton.value;
-        hasChildrenSelected = true;
-        break;
-      }
-    }
+<table>
+    <thead>
+    <tr>
+        <th>7. Contact Information</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
 
-    if (!genderSelected) {
-      genderError.textContent = 'Gender is required.';
-      isValid = false;
-    } else {
-      genderError.textContent = '';
-    }
+    </tr>
+    <tr>
 
-    if (!isValid) {
-      return;
-    }
+    </tr>
+    </tbody>
+</table>
 
-    // Display the text in the table cells
-    document.getElementById('outputUserFirstName').textContent = userFirstName;
-    document.getElementById('outputUserMiddleName').textContent = userMiddleName;
-    document.getElementById('outputUserLastName').textContent = userLastName;
-    document.getElementById('outputUserBirthDate').textContent = userBirthDate;
-    document.getElementById('outputUserBirthPlace').textContent = userBirthPlace;
-    document.getElementById('outputUserNationality').textContent = userNationality;
-    document.getElementById('outputUserCitizenship').textContent = userCitizenship;
-    document.getElementById('outputUserGender').textContent = selectedGender;
-    document.getElementById('outputMaritalStatus').textContent = selectedMaritalStatus;
-    document.getElementById('outputHasChildren').textContent = selectedHasChildren;
-  });
+<table>
+    <thead>
+    <tr>
+        <th>8. Travel dates</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
 
-</script>
+    </tr>
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <th>9. Financial Security</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+    </tr>
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <th>10. Medical Insurance</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+    </tr>
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <th>11. Clothing Sizes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+    </tr>
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <th>12. Applicant's Declaration</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+    </tr>
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+
+<script src="script.js"></script>
 </body>
 </html>
